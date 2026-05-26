@@ -28,5 +28,11 @@ pipeline {
                 sh "docker push ${REPOSITORY_URI}:latest"
             }
         }
+
+        stage('Deploy to EKS (Ansible)') {
+            steps {
+                sh "ansible-playbook deploy.yml"
+            }
+        }
     }
 }
