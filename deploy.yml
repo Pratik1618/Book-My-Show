@@ -1,0 +1,9 @@
+---
+- name: Deploy BookMyShow to EKS
+  hosts: localhost
+  tasks:
+    - name: Deploy the Application
+      command: kubectl apply -f deployment.yml
+    
+    - name: Deploy the Load Balancer Service
+      command: kubectl apply -f service.yml
